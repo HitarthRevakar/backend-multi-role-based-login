@@ -19,6 +19,10 @@ app.use(cors({
 }));
 
 // ----------------- Routes ----------------- //
+app.get("/", (req, res) => {
+    res.json({ message: "Backend is live and running!" });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/tasks", tasksRoutes);
