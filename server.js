@@ -15,7 +15,8 @@ const PORT = process.env.PORT || 5000;
 // ----------------- Middleware ----------------- //
 app.use(express.json());
 app.use(cors({
-    origin: "*"
+    origin: ["https://frontend-multi-role-based-login.vercel.app", "http://localhost:5173"],
+    credentials: true
 }));
 
 // ----------------- Routes ----------------- //

@@ -20,7 +20,7 @@ class AuthService {
 
     // 2. Check if user is active
     if (!user.is_active) {
-      const error = new Error('Your Account is Deactivated !'      );
+      const error = new Error('Your Account is Deactivated !');
       error.statusCode = 403;
       throw error;
     }
