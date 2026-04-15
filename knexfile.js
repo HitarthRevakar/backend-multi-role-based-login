@@ -10,6 +10,10 @@ module.exports = {
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME
     },
+    pool: {
+      min: 2,
+      max: 10,
+    },
     migrations: {
       directory: './db/migrations'
     },
@@ -23,6 +27,13 @@ module.exports = {
     connection: {
       connectionString: process.env.DATABASE_URL,
       ssl: { rejectUnauthorized: false }
+    },
+    pool: {
+      min: 2,
+      max: 10,
+      acquireTimeoutMillis: 30000,
+      idleTimeoutMillis: 30000,
+      reapIntervalMillis: 1000,
     },
     migrations: {
       directory: './db/migrations'

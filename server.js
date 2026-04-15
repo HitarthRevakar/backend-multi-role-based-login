@@ -24,6 +24,11 @@ app.get("/", (req, res) => {
     res.json({ message: "Backend is live and running!" });
 });
 
+// Health check – lightweight, no DB hit (used by uptime monitors & frontend pre-warm)
+app.get("/health", (req, res) => {
+    res.status(200).json({ status: "OK", timestamp: Date.now() });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/tasks", tasksRoutes);
